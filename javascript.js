@@ -1,4 +1,5 @@
 ///timer calculator
+var mini=1;
 let sec=0;
 let ms=0;
 let status ="stopped";
@@ -16,6 +17,9 @@ function stopwatch()
 }
 function startstop(){
     interval=window.setInterval(stopwatch,1);
+}
+function stoptimer(){
+    clearInterval(interval);
 }
 ///timer calculator done 
 function onstart(){
@@ -37,9 +41,7 @@ function off(){
 
 
 //generate random number in tiles?//
-document.addEventListener("DOMContentLoaded", function(event) { 
-    Assignnumb();
-  });
+
 function Assignnumb()
 {  
     function GenerateRandomNumber(min,max){
@@ -76,22 +78,30 @@ for(var i=1; i<25;i++){
 ///generation of random number in tiles ends
 
 ///onclick increase num 
-function increase(clicked_id){
+function increase(id){
     
     var x;
     var y;
     var z;
-    x = document.getElementById(clicked_id).value;
+    x = document.getElementById(id).value;
     z=parseInt(x);
-    
-    if(z>72){
-        document.getElementById(clicked_id).innerHTML=" ";
-        
+   
+    if (parseInt(document.getElementById(id).value)==mini){
+        if((parseInt(document.getElementById(id).value) + 24 ) > 48){ 
+            document.getElementById(id).innerHTML=" ";
+        }
+        else{
+            y=z+24;
+            document.getElementById(id).innerHTML=y;
+
+        }
+        mini++;
+        if(mini==49)
+        {
+            stoptimer();
+        }
     }
-    else{
-        y=z+24;
-        document.getElementById(clicked_id).innerHTML=y;
-    }
+   
   
 
 }
