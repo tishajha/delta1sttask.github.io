@@ -15,20 +15,15 @@ function stopwatch()
 
 }
 function startstop(){
-    if (status==="stopped"){
-        interval=window.setInterval(stopwatch,1);
-        document.getElementById("start");
-        status="started";
-
-    }
-    else{
-        window.clearInterval(interval);
-        document.getElementById("start");
-        status="stopped";
-    }
+    interval=window.setInterval(stopwatch,1);
 }
 ///timer calculator done 
+function onstart(){
+    off();
+    Assignnumb();
+    startstop();
 
+}
 
 ///overlay on tiles starts
 function on(){
