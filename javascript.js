@@ -151,7 +151,7 @@ function increase(id){
    var doc=document.getElementById(id);
     if (Number(doc.innerHTML)==a)
     {
-        if((Number(doc.innerHTML)+ 24 ) >32){ 
+        if((Number(doc.innerHTML)+ 24 ) >40){ 
             doc.innerHTML=" ";
         }
         else{
@@ -160,7 +160,7 @@ function increase(id){
 
         }
         a++;
-        if(a==33)
+        if(a==41)
         {
             stoptimer();
             on();
